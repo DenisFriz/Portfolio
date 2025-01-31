@@ -1,0 +1,96 @@
+.theme {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 80px;
+  border-radius: 8px;
+  margin-top: 15px;
+  &__light,
+  &__dark {
+    visibility: hidden;
+    flex: 1 1 100%;
+    background-color: yellow;
+    color: #000;
+    border-radius: 8px;
+    min-width: 100%;
+    padding: 6px;
+    display: inline-flex;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease-in;
+    overflow: hidden;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transition: all 0.3s ease-in;
+    }
+    &:hover::before {
+      transform: translate(5px, -50%);
+    }
+    &:hover {
+      padding-left: 30px;
+    }
+  }
+  &__light {
+    background-color: yellow;
+    color: #000;
+    &::before {
+      width: 25px;
+      height: 25px;
+      background: url("../svg/sun_icon.svg");
+      background-size: contain;
+      transform: translate(-25px, -50%);
+    }
+    &:hover::before {
+      transform: translate(5px, -50%);
+    }
+  }
+
+  &__dark {
+    background-color: #000;
+    color: yellow;
+    border: 1px solid #fff;
+    &::before {
+      width: 16px;
+      height: 16px;
+      background: url("../svg/moon_icon.svg");
+      background-size: cover;
+      transform: translate(-25px, -50%);
+    }
+    &:hover::before {
+      transform: translate(12px, -50%);
+    }
+  }
+
+  &--active {
+    visibility: visible;
+  }
+}
+
+.test-dark {
+  animation: changeThemeOnDark 1s forwards; /* Анимация будет длиться 1 секунду и останется на последнем кадре */
+}
+
+.test-dark-reverse {
+  animation: changeThemeOnDarkReverse 1s forwards;
+}
+
+@keyframes changeThemeOnDark {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-80px, 0);
+  }
+}
+
+@keyframes changeThemeOnDarkReverse {
+  0% {
+    transform: translate(-80px, 0);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
