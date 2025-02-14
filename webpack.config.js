@@ -35,6 +35,7 @@ module.exports = {
       patterns: [
         { from: "./src/img/", to: "./img" },
         { from: "./src/svg/", to: "./svg" },
+        { from: "./src/video", to: "./video" },
         { from: "./src/styles/normolize.css", to: "./css" },
       ],
     }),
