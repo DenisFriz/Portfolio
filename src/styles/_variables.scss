@@ -1,0 +1,31 @@
+:root {
+  --text-accent-color: #000;
+  --link-bg-color: #349dd4;
+  --body-bg-color: #fff;
+  --list-item-bg-color: rgb(138 228 160 / 30%);
+  --list-first-item-gb-color: rgb(138 228 160 / 100%);
+  --btn-look-color: #349dd4;
+  --text-lighty-color: #349dd4;
+  --stack-item-bg-color: #5bd04a40;
+
+  --scrollbar-bg-color: #55d31aa6;
+  --scrollbar-track-color: #349dd4;
+
+  --stack-bg-color: #fff;
+}
+
+.html--dark-mode {
+  --text-accent-color: #fff;
+  --link-bg-color: #db9c27;
+  --body-bg-color: #000;
+  --list-item-bg-color: rgba(11, 19, 68, 0.4);
+  --list-first-item-gb-color: #0b1344;
+  --btn-look-color: #db9c27;
+  --text-lighty-color: #db9c27;
+  --stack-item-bg-color: #534cc340;
+
+  --scrollbar-bg-color: #534cc340;
+  --scrollbar-track-color: #db9c27;
+
+  --stack-bg-color: #191a1e;
+}
