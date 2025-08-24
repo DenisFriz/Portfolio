@@ -1,4 +1,4 @@
 import "../styles/main.scss";
-/* import "./animation"; */
+import "./animation";
 import "./data";
 import "./main";
