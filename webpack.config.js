@@ -1,19 +1,24 @@
-const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
+import path from "path";
+import HtmlWebpackPlugin from "html-webpack-plugin";
+import MiniCssExtractPlugin from "mini-css-extract-plugin";
+import CopyPlugin from "copy-webpack-plugin";
 
-module.exports = {
+export default {
   mode: "production",
-  entry: "./src/scripts/index.js",
+  entry: "./src/scripts/index.ts",
   output: {
-    path: path.resolve(__dirname, "docs"),
+    path: path.resolve(process.cwd(), "docs"),
     filename: "./scripts/app.bundle.js",
     assetModuleFilename: "img/[name][ext]",
     clean: true,
   },
   module: {
     rules: [
+      {
+        test: /\.ts$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.scss$/i,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
@@ -24,13 +29,12 @@ module.exports = {
       },
     ],
   },
+  resolve: {
+    extensions: [".ts", ".js"],
+  },
   plugins: [
-    new HtmlWebpackPlugin({
-      template: "./src/index.html",
-    }),
-    new MiniCssExtractPlugin({
-      filename: "css/main.css",
-    }),
+    new HtmlWebpackPlugin({ template: "./src/index.html" }),
+    new MiniCssExtractPlugin({ filename: "css/main.css" }),
     new CopyPlugin({
       patterns: [
         { from: "./src/img/", to: "./img" },
@@ -40,4 +44,12 @@ module.exports = {
       ],
     }),
   ],
+  devServer: {
+    static: "./docs",
+    hot: true,
+    port: 3000,
+  },
+  performance: {
+    hints: false,
+  },
 };

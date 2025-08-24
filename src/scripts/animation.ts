@@ -1,3 +1,6 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/all";
+
 gsap.registerPlugin(ScrollTrigger);
 
 const mm = gsap.matchMedia();
@@ -180,72 +183,9 @@ mm.add("(min-width: 901px)", () => {
     tlLoader.kill();
   };
 });
-// We search three (3) blocks in the DOM node
-const BLOCKS = document.querySelectorAll(".block");
-
-// An object that contains all the necessary information for the animation
-const Blocks = {
-  red: {
-    x: 50,
-    y: 50,
-    xSpeed: 2,
-    ySpeed: 1,
-  },
-  green: {
-    x: 450,
-    y: 150,
-    xSpeed: -1,
-    ySpeed: 2,
-  },
-  blue: {
-    x: 650,
-    y: 350,
-    xSpeed: 1,
-    ySpeed: 3,
-  },
-};
-
-initBlocks(BLOCKS);
-
-function initBlocks(blocks) {
-  for (let i = 0; i < blocks.length; i++) {
-    // First we find the required class
-    const className = blocks[i].classList.value.split(" ")[1];
-    // Then takes element of block;
-    // Example: className = block__red, then value = red;
-    // Remember we are using the BEM methodology
-    const value = className.split("__")[1];
-    Blocks[value].WidthBlock = blocks[i].offsetWidth;
-    Blocks[value].HeightBlock = blocks[i].offsetHeight;
-    // We should has real link to DOM node
-    // Therefore, we create DOMElement property which it has link to real DOM node
-    Blocks[value].DOMElement = blocks[i];
-  }
-}
-function updateBlock(block) {
-  block.x += block.xSpeed;
-  block.y += block.ySpeed;
-
-  // Here we check if our block is within users' viewport
-  if (block.x < 0 || block.x + block.WidthBlock > window.innerWidth) {
-    block.xSpeed = -block.xSpeed; // If it's don't, we change x value
-  }
-
-  if (block.y < 0 || block.y + block.HeightBlock > window.innerHeight) {
-    block.ySpeed = -block.ySpeed; // If it's don't, we change y value
-  }
-  block.DOMElement.style.transform = `translate(${block.x}px, ${block.y}px)`;
-}
-
-function updateAllBlocks() {
-  Object.values(Blocks).forEach(updateBlock);
-}
 
 function animate() {
-  updateAllBlocks();
-
   requestAnimationFrame(animate);
 }
 
-//Start the animation
 animate();

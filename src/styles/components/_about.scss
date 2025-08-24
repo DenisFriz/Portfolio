@@ -1,11 +1,13 @@
+@use "../functions" as *;
+
 .about {
   &__block {
     padding: clamp(0.75rem, 0.4167rem + 1.6667vw, 1.875rem);
-    display: flex;
-    align-items: center;
+
+    @include flex($align-items: center);
     column-gap: 5vw;
 
-    @media screen and (max-width: 700px) {
+    @include media-max-width(700px) {
       flex-direction: column;
     }
   }
@@ -15,14 +17,15 @@
       display: block;
       margin-bottom: 16px;
       color: var(--text-accent-color);
-      font-size: 18px;
+      font-size: rem(18);
       font-weight: 500;
       line-height: 1.5;
       letter-spacing: 2px;
     }
 
-    @media screen and (max-width: 700px) {
+    @include media-max-width(700px) {
       align-self: flex-start;
+      text-align: center;
     }
   }
 
@@ -43,29 +46,51 @@
     color: transparent;
   }
 
+  &__tel {
+    @include flex($display: inline-flex, $align-items: center);
+
+    margin-bottom: 10px;
+    img {
+      cursor: pointer;
+      margin-left: 10px;
+    }
+  }
+
+  &__text {
+    font-size: rem(14);
+  }
+
+  &__link {
+    color: var(--text-lighty-color);
+  }
+
   &__img {
-    width: 250px;
-    height: 250px;
+    @include stop-drag();
+    @include size($w: 250px, $h: 250px);
+
     border-radius: 50%;
 
-    @media screen and (max-width: 700px) {
-      width: 140px;
-      height: 140px;
+    @include media-max-width(700px) {
+      margin-top: 20px;
+      @include size($w: 140px, $h: 140px);
     }
   }
 
   &__btn {
     position: relative;
+    display: inline-block;
     padding: 10px 22px;
+    margin-top: 6px;
     background-color: var(--btn-look-color);
     border-radius: 50px;
     border: none;
     color: #fff;
-    font-size: 18px;
+    font-size: rem(18);
     font-weight: 400;
     box-shadow: 0 5px 10px rgba($color: #000000, $alpha: 0.1);
     transition: transform 0.2s ease;
     text-decoration: none;
+
     &:active {
       transform: scale(0.96);
     }
@@ -73,14 +98,21 @@
     &::before,
     &::after {
       content: "";
-      position: absolute;
+      @include relative-position($position: absolute, $left: 50%);
+
       height: 100%;
       width: 150%;
-      left: 50%;
       z-index: -1;
       transform: translateX(-50%);
       background-repeat: no-repeat;
     }
+
+    @include media-max-width(700px) {
+      padding: 6px 12px;
+      border-radius: 12px;
+      font-size: rem(16);
+    }
+
     &.animate::before {
       top: -70%;
       background-image: radial-gradient(

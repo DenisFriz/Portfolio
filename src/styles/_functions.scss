@@ -1,0 +1,52 @@
+@mixin if-prop($property, $value) {
+  @if $value != null {
+    #{$property}: $value;
+  }
+}
+
+@function rem($px) {
+  @return calc($px / 16 * 1rem);
+}
+
+@mixin flex(
+  $display: flex,
+  $flex-direction: null,
+  $justify-content: null,
+  $align-items: null
+) {
+  display: $display;
+
+  @include if-prop(flex-direction, $flex-direction);
+  @include if-prop(justify-content, $justify-content);
+  @include if-prop(align-items, $align-items);
+}
+
+@mixin relative-position(
+  $position: null,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  @include if-prop(position, $position);
+  @include if-prop(top, $top);
+  @include if-prop(right, $right);
+  @include if-prop(bottom, $bottom);
+  @include if-prop(left, $left);
+}
+
+@mixin media-max-width($value) {
+  @media (max-width: $value) {
+    @content;
+  }
+}
+
+@mixin size($w, $h) {
+  @include if-prop(width, $w);
+  @include if-prop(height, $h);
+}
+
+@mixin stop-drag() {
+  user-select: none;
+  -webkit-user-drag: none;
+}

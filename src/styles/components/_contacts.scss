@@ -1,0 +1,86 @@
+@use "../functions" as *;
+
+.contacts {
+  cursor: pointer;
+  @include relative-position($position: fixed, $right: 10px, $bottom: 10px);
+  @include size($w: 50px, $h: 50px);
+
+  border-radius: 50%;
+  background-color: var(--contacts-bg-color);
+  z-index: 1000;
+
+  &::before {
+    content: "";
+    @include relative-position($position: absolute, $top: 50%, $left: 50%);
+
+    transform: translate(-50%, -50%);
+    background: url("../img/four-squares-button-of-view-options.png");
+    background-repeat: no-repeat;
+    @include size($w: 24px, $h: 24px);
+  }
+
+  &__list {
+    cursor: default;
+    @include relative-position($position: absolute, $bottom: 0, $left: 0);
+
+    z-index: -1;
+    background-color: var(--contacts-bg-color);
+    @include size($w: 100%, $h: 100px);
+
+    border-radius: 6px;
+    list-style: none;
+
+    @include flex(
+      $flex-direction: column,
+      $justify-content: center,
+      $align-items: center
+    );
+
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease-in, bottom 0.3s ease;
+
+    &-active {
+      bottom: calc(100% + 10px);
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__item {
+    cursor: pointer;
+  }
+
+  &__img {
+    @include stop-drag();
+  }
+}
+
+.copied {
+  position: fixed;
+  inset: 0;
+  background-color: rgba($color: #000000, $alpha: 0.4);
+  z-index: 100;
+
+  @include flex($justify-content: center, $align-items: center);
+
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in;
+
+  &-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__text {
+    font-size: rem(32);
+
+    @include media-max-width(900px) {
+      font-size: rem(28);
+    }
+
+    @include media-max-width(600px) {
+      font-size: rem(24);
+    }
+  }
+}

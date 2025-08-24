@@ -1,4 +1,13 @@
-export const TECHNOLOGY = [
+export type Technology = {
+  name: string;
+  technologies: string[];
+  link: string;
+  smallImg: string;
+  fullscreenImg: string;
+  type: string;
+};
+
+export const TECHNOLOGY: Technology[] = [
   {
     name: "Weather site",
     technologies: ["React", "Typescript", "React-query", "SCSS module", "Vite"],
@@ -101,7 +110,7 @@ export const TECHNOLOGY = [
     link: "./video/FakeSpotify.mp4",
     smallImg: "",
     fullscreenImg: "",
-    type: "Full Stack",
+    type: "videos",
   },
   {
     name: "Quiz",
@@ -109,7 +118,7 @@ export const TECHNOLOGY = [
     link: "./video/Quiz.mp4",
     smallImg: "",
     fullscreenImg: "",
-    type: "Full Stack",
+    type: "videos",
   },
   {
     name: "Vimo",
@@ -124,6 +133,99 @@ export const TECHNOLOGY = [
     link: "./video/Vimo.mp4",
     smallImg: "",
     fullscreenImg: "",
-    type: "Full Stack",
+    type: "videos",
+  },
+];
+
+export type TechnologyItem = {
+  name: string;
+  imageLink?: string;
+};
+
+export type Stack = {
+  title: string;
+  technologies: TechnologyItem[];
+};
+
+export const STACK: Stack[] = [
+  {
+    title: "Front-end languages",
+    technologies: [
+      { name: "HTML", imageLink: "img/icons/html-icon.png" },
+      { name: "CSS", imageLink: "img/icons/css-icon.png" },
+      { name: "SCSS / SASS", imageLink: "img/icons/sass-icon.png" },
+      { name: "JavaScript", imageLink: "img/icons/js-icon.png" },
+      { name: "Typescript", imageLink: "img/icons/ts-icon.png" },
+      { name: "React", imageLink: "img/icons/react-icon.png" },
+      { name: "Ant Design", imageLink: "img/icons/ant-design-icon.png" },
+      { name: "Bootstrap", imageLink: "img/icons/bootstrap-icon.png" },
+      { name: "MUI", imageLink: "img/icons/mui-icon.jpg" },
+      { name: "Tailwind CSS", imageLink: "img/icons/tailwindcss-icon.png" },
+    ],
+  },
+  {
+    title: "Front-end frameworks",
+    technologies: [
+      { name: "Next.js", imageLink: "img/icons/next-js-icon.png" },
+      { name: "Vue.js", imageLink: "img/icons/vue-js-icon.png" },
+    ],
+  },
+  {
+    title: "State management libraries",
+    technologies: [
+      { name: "Redux / RTK", imageLink: "img/icons/redux-icon.png" },
+      { name: "Zustand", imageLink: "img/icons/redux-icon.png" },
+      { name: "Pinia", imageLink: "img/icons/pinia-icon.png" },
+    ],
+  },
+  {
+    title: "Back-end languages",
+    technologies: [
+      { name: "Node.js", imageLink: "img/icons/node-js-icon.png" },
+      { name: "Python", imageLink: "img/icons/python-icon.png" },
+    ],
+  },
+  {
+    title: "Back-end frameworks",
+    technologies: [
+      { name: "Express.js", imageLink: "img/icons/express-js-icon.png" },
+      { name: "NestJS", imageLink: "img/icons/nestjs-icon.png" },
+      { name: "FastAPI", imageLink: "img/icons/fastapi-icon.png" },
+    ],
+  },
+  {
+    title: "Build automation tools",
+    technologies: [
+      { name: "Gulp", imageLink: "img/icons/gulp-icon.png" },
+      { name: "Webpack", imageLink: "img/icons/webpack-icon.png" },
+      { name: "Vite", imageLink: "img/icons/vite-icon.png" },
+      { name: "Git", imageLink: "img/icons/git-icon.png" },
+    ],
+  },
+  {
+    title: "Testing library",
+    technologies: [
+      { name: "React testing library" },
+      { name: "Vitest" },
+      { name: "Jest" },
+    ],
+  },
+  {
+    title: "Database query language",
+    technologies: [{ name: "SQL", imageLink: "img/icons/sql-icon.png" }],
+  },
+  {
+    title: "RDBMS",
+    technologies: [
+      { name: "PostgreSQL", imageLink: "img/icons/postgre-sql-icon.png" },
+      { name: "SQLite", imageLink: "img/icons/sqlite-icon.png" },
+    ],
+  },
+  {
+    title: "Other technologies",
+    technologies: [
+      { name: "GraphQL", imageLink: "img/icons/graphql-icon.png" },
+      { name: "Socket.IO", imageLink: "img/icons/socket-io-icon.png" },
+    ],
   },
 ];

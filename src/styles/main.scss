@@ -1,12 +1,17 @@
 @use "./variables" as v;
+@use "./functions" as *;
 @use "./components/preloader";
 @use "./components/modal";
 @use "./components/about";
 @use "./components/stack";
 @use "./components/list";
-@use "./components/theme";
+@use "./components/contacts";
 
-* {
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
@@ -41,24 +46,4 @@ body {
 
 button {
   cursor: pointer;
-}
-
-.block {
-  position: absolute;
-  z-index: -1;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  filter: blur(5px);
-  &__red {
-    background-color: red;
-  }
-
-  &__green {
-    background-color: green;
-  }
-
-  &__blue {
-    background-color: blue;
-  }
 }
