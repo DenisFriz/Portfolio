@@ -9,27 +9,11 @@ export type Technology = {
 
 export const TECHNOLOGY: Technology[] = [
   {
-    name: "Weather site",
-    technologies: ["React", "Typescript", "React-query", "SCSS module", "Vite"],
-    link: "https://denisfriz.github.io/Weather-site/",
-    smallImg: "./img/Weather-main.JPG",
-    fullscreenImg: "./img/Weather-main.JPG",
-    type: "front-end",
-  },
-  {
     name: "FlowerLover",
     technologies: ["HTML", "SCSS", "Typescript", "Gulp", "Webpack"],
     link: "https://denisfriz.github.io/Flowers/",
     smallImg: "./img/FlowerLover_main.JPG",
     fullscreenImg: "./img/FlowerLover_fullscreen.png",
-    type: "front-end",
-  },
-  {
-    name: "HorseClub",
-    technologies: ["HTML", "SCSS", "JS", "Webpack"],
-    link: "https://denisfriz.github.io/HorseClub/",
-    smallImg: "./img/HorseClub-main.JPG",
-    fullscreenImg: "./img/HorseClub-fullscreen.png",
     type: "front-end",
   },
   {
@@ -46,14 +30,6 @@ export const TECHNOLOGY: Technology[] = [
     link: "https://denisfriz.github.io/London/",
     smallImg: "./img/London-main.JPG",
     fullscreenImg: "./img/London-fullscreen.png",
-    type: "front-end",
-  },
-  {
-    name: "Medical",
-    technologies: ["HTML", "SASS", "JS", "Webpack"],
-    link: "https://denisfriz.github.io/Medical/",
-    smallImg: "./img/Medical-main.JPG",
-    fullscreenImg: "./img/Medical-fullscreen.png",
     type: "front-end",
   },
   {
@@ -78,14 +54,6 @@ export const TECHNOLOGY: Technology[] = [
     link: "https://denisfriz.github.io/Helyfly/",
     smallImg: "./img/Helyfly-main.JPG",
     fullscreenImg: "./img/Helyfly-fullscreen.png",
-    type: "front-end",
-  },
-  {
-    name: "WPM (Words per minute)",
-    technologies: ["HTML", "SCSS", "JS"],
-    link: "https://denisfriz.github.io/WPM/",
-    smallImg: "./img/WPM-main.JPG",
-    fullscreenImg: "./img/WPM-fullscreen.png",
     type: "front-end",
   },
   {
@@ -134,6 +102,22 @@ export const TECHNOLOGY: Technology[] = [
     smallImg: "",
     fullscreenImg: "",
     type: "videos",
+  },
+  {
+    name: "HorseClub",
+    technologies: ["HTML", "SCSS", "JS", "Webpack"],
+    link: "https://denisfriz.github.io/HorseClub/",
+    smallImg: "./img/HorseClub-main.JPG",
+    fullscreenImg: "./img/HorseClub-fullscreen.png",
+    type: "front-end",
+  },
+  {
+    name: "WPM (Words per minute)",
+    technologies: ["HTML", "SCSS", "JS"],
+    link: "https://denisfriz.github.io/WPM/",
+    smallImg: "./img/WPM-main.JPG",
+    fullscreenImg: "./img/WPM-fullscreen.png",
+    type: "front-end",
   },
 ];
 
