@@ -142,7 +142,7 @@ export const STACK: Stack[] = [
     ],
   },
   {
-    title: "Styling / UI:",
+    title: "Styling / UI",
     technologies: [
       { name: "HTML", imageLink: "img/icons/html-icon.png" },
       { name: "CSS", imageLink: "img/icons/css-icon.png" },
