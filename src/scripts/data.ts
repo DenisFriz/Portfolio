@@ -133,25 +133,34 @@ export type Stack = {
 
 export const STACK: Stack[] = [
   {
-    title: "Front-end languages",
+    title: "Languages",
+    technologies: [
+      { name: "JavaScript", imageLink: "img/icons/js-icon.png" },
+      { name: "Typescript", imageLink: "img/icons/ts-icon.png" },
+      { name: "PHP", imageLink: "" },
+      { name: "Python", imageLink: "img/icons/python-icon.png" },
+    ],
+  },
+  {
+    title: "Styling / UI:",
     technologies: [
       { name: "HTML", imageLink: "img/icons/html-icon.png" },
       { name: "CSS", imageLink: "img/icons/css-icon.png" },
       { name: "SCSS / SASS", imageLink: "img/icons/sass-icon.png" },
-      { name: "JavaScript", imageLink: "img/icons/js-icon.png" },
-      { name: "Typescript", imageLink: "img/icons/ts-icon.png" },
-      { name: "React", imageLink: "img/icons/react-icon.png" },
       { name: "Ant Design", imageLink: "img/icons/ant-design-icon.png" },
       { name: "Bootstrap", imageLink: "img/icons/bootstrap-icon.png" },
-      { name: "MUI", imageLink: "img/icons/mui-icon.jpg" },
+      { name: "Material UI", imageLink: "img/icons/mui-icon.jpg" },
       { name: "Tailwind CSS", imageLink: "img/icons/tailwindcss-icon.png" },
+      { name: "PrimeVue", imageLink: "" },
     ],
   },
   {
     title: "Front-end frameworks",
     technologies: [
+      { name: "React", imageLink: "img/icons/react-icon.png" },
       { name: "Next.js", imageLink: "img/icons/next-js-icon.png" },
       { name: "Vue.js", imageLink: "img/icons/vue-js-icon.png" },
+      { name: "Nuxt", imageLink: "" },
     ],
   },
   {
@@ -160,13 +169,7 @@ export const STACK: Stack[] = [
       { name: "Redux / RTK", imageLink: "img/icons/redux-icon.png" },
       { name: "Zustand", imageLink: "img/icons/redux-icon.png" },
       { name: "Pinia", imageLink: "img/icons/pinia-icon.png" },
-    ],
-  },
-  {
-    title: "Back-end languages",
-    technologies: [
-      { name: "Node.js", imageLink: "img/icons/node-js-icon.png" },
-      { name: "Python", imageLink: "img/icons/python-icon.png" },
+      { name: "TanStack Query", imageLink: "" },
     ],
   },
   {
@@ -174,7 +177,24 @@ export const STACK: Stack[] = [
     technologies: [
       { name: "Express.js", imageLink: "img/icons/express-js-icon.png" },
       { name: "NestJS", imageLink: "img/icons/nestjs-icon.png" },
+      { name: "Laravel", imageLink: "" },
       { name: "FastAPI", imageLink: "img/icons/fastapi-icon.png" },
+    ],
+  },
+  {
+    title: "Databases",
+    technologies: [
+      { name: "PostgreSQL", imageLink: "img/icons/postgre-sql-icon.png" },
+      { name: "MongoDB", imageLink: "" },
+      { name: "MySQL", imageLink: "" },
+      { name: "SQLite", imageLink: "img/icons/sqlite-icon.png" },
+    ],
+  },
+  {
+    title: "Mobile",
+    technologies: [
+      { name: "React Native", imageLink: "" },
+      { name: "Expo", imageLink: "" },
     ],
   },
   {
@@ -187,22 +207,22 @@ export const STACK: Stack[] = [
     ],
   },
   {
+    title: "Tools / Infrastructure",
+    technologies: [
+      { name: "Redis" },
+      { name: "RabbitMQ" },
+      { name: "Elasticsearch" },
+      { name: "Docker" },
+      { name: "Docker Compose" },
+      { name: "Nginx" },
+    ],
+  },
+  {
     title: "Testing library",
     technologies: [
       { name: "React testing library" },
       { name: "Vitest" },
       { name: "Jest" },
-    ],
-  },
-  {
-    title: "Database query language",
-    technologies: [{ name: "SQL", imageLink: "img/icons/sql-icon.png" }],
-  },
-  {
-    title: "RDBMS",
-    technologies: [
-      { name: "PostgreSQL", imageLink: "img/icons/postgre-sql-icon.png" },
-      { name: "SQLite", imageLink: "img/icons/sqlite-icon.png" },
     ],
   },
   {
